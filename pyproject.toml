@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "python_fsm_creminem94"
-version = "0.0.1"
+version = "0.0.3"
 authors = [
   { name="Simone Cremasco", email="simonecremasco94@gmail.com" },
 ]
@@ -18,5 +18,5 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/pypa/sampleproject"
-Issues = "https://github.com/pypa/sampleproject/issues"
+Homepage = "https://github.com/creminem94/python_fsm"
+Issues = "https://github.com/creminem94/python_fsm/issues"

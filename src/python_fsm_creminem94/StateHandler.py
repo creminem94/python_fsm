@@ -35,8 +35,8 @@ class RobotState():
         return False
 
 class StateHandler():
-    def __init__(self, node, states: List[RobotState], firstState: Enum, loopSleep: float = 0, loopCallback: Callable = lambda: None) -> None:
-        self.node = node
+    def __init__(self, states: List[RobotState], firstState: Enum, loopSleep: float = 0, loopCallback = None, logger = None) -> None:
+        self.logger = logger
         self.states = states
         self.currentState = None
         self.changeState(firstState)
@@ -50,7 +50,8 @@ class StateHandler():
         self.currentState.exec()
         self.checkCondition()
         time.sleep(self.loopSleep)
-        if self.loopCallback is not None:
+        # TODO, should check if the callback has the exact number of params
+        if callable(self.loopCallback):
             self.loopCallback(self.currentState.state.name)
 
 
@@ -75,7 +76,8 @@ class StateHandler():
         self.currentState = self.getState(state)
         if self.currentState is None:
             raise Exception('State not implemented')
-        self.node.get_logger().info('new state: %r' % state)
+        if self.logger is not None:
+            self.logger('new state: %r' % state)
         #execute the pre function of the new state
         self.currentState.pre()
     

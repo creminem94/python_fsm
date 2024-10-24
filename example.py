@@ -1,8 +1,3 @@
-# Python FSM
-This package contains a set of classes to handle a Finite State Machine (FSM).
-
-# Example usage
-```
 from python_fsm_creminem94.StateHandler import StateHandler, StateLink, RobotState
 from enum import Enum
 
@@ -65,10 +60,3 @@ def test():
 
 if __name__ == "__main__":
     test()
-```
-
-This code will loop an FSM infinetely back and forth between two states. Running the code you may notice that the log in the loop callback will never print counter = 5 even if the 5 is reached. This is because the execution order in the state handler is as follow:
-- exec current
-- check condition for transition and if it's true change state
-- exec loop callback
-So as you can see, the transition is happened, so the post condition reset the counter to 0 before printing in the loop callback
