@@ -3,7 +3,7 @@ This package contains a set of classes to handle a Finite State Machine (FSM).
 
 # Example usage
 ```
-from python_fsm_creminem94.StateHandler import StateHandler, StateLink, RobotState
+from python_fsm_handler.StateHandler import StateHandler, StateLink, RobotState
 from enum import Enum
 
 

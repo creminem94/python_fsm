@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "python_fsm_creminem94"
-version = "0.0.3"
+name = "python_fsm_handler"
+version = "0.0.1"
 authors = [
   { name="Simone Cremasco", email="simonecremasco94@gmail.com" },
 ]

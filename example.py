@@ -1,4 +1,4 @@
-from python_fsm_creminem94.StateHandler import StateHandler, StateLink, RobotState
+from python_fsm_handler.StateHandler import StateHandler, StateLink, RobotState
 from enum import Enum
 
 
