@@ -3,7 +3,7 @@ This package contains a set of classes to handle a Finite State Machine (FSM).
 
 # Example usage
 ```
-from python_fsm_handler.StateHandler import StateHandler, StateLink, RobotState
+from python_fsm_handler.StateHandler import FsmHandler, StateLink, StateObject
 from enum import Enum
 
 
@@ -52,15 +52,15 @@ def test():
         return workCounter >= 5
 
     states = [
-        RobotState(FsmState.MOVE, [
+        StateObject(FsmState.MOVE, [
             StateLink(FsmState.WORK, moveToWork)
         ], movePre, moveExec, movePost),
-        RobotState(FsmState.WORK, [
+        StateObject(FsmState.WORK, [
             StateLink(FsmState.MOVE, workToMove)
         ], workPre, workExec, workPost),
     ]
 
-    stateHandler = StateHandler(states, FsmState.MOVE, logger=print, loopCallback=loopCallback)
+    FsmHandler(states, FsmState.MOVE, logger=print, loopCallback=loopCallback)
 
 
 if __name__ == "__main__":

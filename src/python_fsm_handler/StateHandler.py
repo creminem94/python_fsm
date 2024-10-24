@@ -13,7 +13,7 @@ class StateLink():
     def getNext(self):
         return self.nextState
 
-class RobotState():
+class StateObject():
     def __init__(self, 
             state: Enum,
             stateLinks: List[StateLink],
@@ -34,8 +34,8 @@ class RobotState():
 
         return False
 
-class StateHandler():
-    def __init__(self, states: List[RobotState], firstState: Enum, loopSleep: float = 0, loopCallback = None, logger = None) -> None:
+class FsmHandler():
+    def __init__(self, states: List[StateObject], firstState: Enum, loopSleep: float = 0, loopCallback = None, logger = None) -> None:
         self.logger = logger
         self.states = states
         self.currentState = None
