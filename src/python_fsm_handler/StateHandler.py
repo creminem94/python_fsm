@@ -43,6 +43,7 @@ class FsmHandler():
         self.loopSleep = loopSleep
         self.loopCallback = loopCallback
 
+    def run(self):
         while True:
             self.loop()
 

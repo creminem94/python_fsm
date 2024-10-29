@@ -60,8 +60,8 @@ def test():
         ], workPre, workExec, workPost),
     ]
 
-    FsmHandler(states, FsmState.MOVE, logger=print, loopCallback=loopCallback)
-
+    fsm = FsmHandler(states, FsmState.MOVE, logger=print, loopCallback=loopCallback)
+    fsm.run()
 
 if __name__ == "__main__":
     test()

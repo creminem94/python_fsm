@@ -1,4 +1,4 @@
-from python_fsm_handler.StateHandler import FsmHandler, StateLink, StateObject
+from src.python_fsm_handler.StateHandler import FsmHandler, StateLink, StateObject
 from enum import Enum
 
 
@@ -55,7 +55,8 @@ def test():
         ], workPre, workExec, workPost),
     ]
 
-    FsmHandler(states, FsmState.MOVE, logger=print, loopCallback=loopCallback)
+    fsm = FsmHandler(states, FsmState.MOVE, logger=print, loopCallback=loopCallback)
+    fsm.run()
 
 
 if __name__ == "__main__":
